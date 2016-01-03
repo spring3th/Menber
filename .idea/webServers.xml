@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="3921b72e-d8b4-4bb5-8d2f-53e53b021a37" name="hkcdt.com" url="http://64.207.188.243">
+        <fileTransfer host="64.207.188.243" port="21" rootFolder="/httpdocs/Manage" password="dfdddfccdf99df9fdf99df9bdf98df98df9f" username="spring3th">
+          <advancedOptions>
+            <advancedOptions controlEncoding="utf-8" dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
