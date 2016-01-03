@@ -3,15 +3,15 @@
 {% block content %}
 
 <p>You searched for: <strong>{{ query }}</strong></p>
-{% if books %}
-<p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+{% if menber %}
+<p>Found {{ menber|length }} menber{{ menber|pluralize }}.</p>
 <ul>
-{% for book in books %}
-<li>{{ book.title }}</li>
+{% for menber in menber %}
+<li>{{ menber.menber_name }}</li>
 {% endfor %}
 </ul>
 {% else %}
-<p>No books matched your search criteria.</p>
+<p>No menber matched your search criteria.</p>
 {% endif %}
 
 {% endblock %}
