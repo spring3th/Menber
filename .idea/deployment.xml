@@ -5,7 +5,7 @@
       <paths name="hkcdt.com">
         <serverdata>
           <mappings>
-            <mapping deploy="/httpdocs/Manage" local="$PROJECT_DIR$" web="/httpdocs" />
+            <mapping deploy="/httpdocs/Manage" local="$PROJECT_DIR$/Manage" web="/" />
           </mappings>
         </serverdata>
       </paths>
