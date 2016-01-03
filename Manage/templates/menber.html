@@ -1,0 +1,56 @@
+
+{% extends "base.html" %}  
+{% block content %}
+
+    <div class="container">
+     <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>
+							姓名
+						</th>
+						<th>
+							地址
+						</th>
+						<th>
+							城市
+						</th>
+                        <th>
+							电话
+						</th>
+                       <th>
+                           店铺
+                       </th>
+					</tr>
+				</thead>
+				<tbody>
+                 {% for menber in menber %}
+					<tr class="success">
+						<td>
+							{{ menber.menber_name}}
+						</td>
+						<td>
+							{{ menber.menber_address}}
+						</td>
+						<td>
+							{{ menber.menber_city}}
+						</td>
+						<td>
+							{{ menber.menber_tel}}
+						</td>
+                        <td>
+                            {{menber.menber_store}}
+                        </td>
+					</tr>
+                    {% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+    </div> <!-- /container -->
+
+{% endblock %}
