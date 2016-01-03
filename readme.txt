@@ -1,5 +1,5 @@
-开发环境搭建：
-windows :
+windows开发环境搭建：
+
 安装python3.5,设置python ->Path
 下载安装：distribute
 安装pip,python get-pip.py
