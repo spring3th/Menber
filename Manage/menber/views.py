@@ -25,4 +25,4 @@ def search(request):
          return render_to_response('search_result.html',
                                    {'menber':menber,'query':q})
     else:
-        return HttpResponse('Please submit a search term.')
+        return render_to_response('search_form.html',{'error':True})
