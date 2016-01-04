@@ -19,12 +19,14 @@ def search_form(request):
     return render_to_response('search_form.html')
 
 def search(request):
-    if 'q' in request.GET and request.GET['q']:
-         q = request.GET['q']
-         menber = Menbers.objects.filter(menber_name=q)
-         t = loader.get_template('search_result.html')
-         c = Context({'menber':menber,'query':q})
-         return HttpResponse(t.render(c))
+    if 'q' in request.GET:
+        message = 'You searched for:%r'% request.GET['q']
+        return HttpResponse(message)
+        # q = request.GET['q']
+         #menber = Menbers.objects.filter(menber_name=q)
+         #t = loader.get_template('search_result.html')
+         #c = Context({'menber':menber,'query':q})
+         #return HttpResponse(t.render(c))
          #return render_to_response('search_result.html',
          #                          {'menber':menber,'query':q})
     else:
