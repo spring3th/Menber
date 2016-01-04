@@ -18,7 +18,7 @@ def Index(request):
 def search_form(request):
     return render_to_response('search_form.html')
 
-def search(request):
+def sresult(request):
     if 'q' in request.GET:
         message = 'You searched for:%r'% request.GET['q']
         return HttpResponse(message)
