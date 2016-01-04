@@ -21,6 +21,6 @@ urlpatterns = patterns('menber.views',
    (r'^admin/', admin.site.urls),
    (r'^menber/$','Menber'),
    (r'^search-form/$','search_form'),
-   (r'^search/$','sresult'),
+   (r'^search/$','search'),
    (r'','Index')
 )

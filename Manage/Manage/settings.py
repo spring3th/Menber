@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'manage',
 	'USER':'hkcdt',
 	'PASSWORD':'wf3531225',
-	'HOST':'',
+	'HOST':'64.207.188.243',
 	'PORT':'',
 	'OPTIONS':{'autocommit':True,},
     }
