@@ -21,8 +21,8 @@ def search_form(request):
 def search(request):
     if 'q' in request.GET and request.GET['q']:
          q = request.GET['q']
-         menber = Menbers.objects.filter( menber_name=q)
-         return render_to_response('search_results.html',
+         menber = Menbers.objects.filter(menber_name=q)
+         return render_to_response('search_result.html',
                                    {'menber':menber,'query':q})
     else:
         return HttpResponse('Please submit a search term.')
