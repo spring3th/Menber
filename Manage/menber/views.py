@@ -44,7 +44,7 @@ def signup(req):
             if User.objects.filter(username=username):
                 status = 'user_exist'
             else:
-                newuser = User.objects.create_user(username=username,passwd=passwd,email=post.get('email',''))
+                newuser = User.objects.create_user(username=username,password=passwd,email=post.get('email',''))
                 newuser.save()
                 new_myuser = MyUser(user=newuser,nickname=post.get('nickname'),permission=1)
                 new_myuser.save()
