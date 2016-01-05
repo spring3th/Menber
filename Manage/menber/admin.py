@@ -1,5 +1,5 @@
 from django.contrib import admin
-from menber.models import Stores,Menbers,Teacher,Courses
+from menber.models import Stores,Menbers,Teacher,Courses,MyUser
 
 # Register your models here.
 class MenberAdmin(admin.ModelAdmin):
@@ -25,6 +25,6 @@ admin.site.register(Stores,StoreAdmin)
 admin.site.register(Menbers,MenberAdmin)
 admin.site.register(Teacher,TeacherAdmin)
 admin.site.register(Courses,CourseAdmin)
-
+admin.site.register(MyUser)
 
 
