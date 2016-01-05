@@ -19,7 +19,7 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('menber.views',
-   (r'^admin/', 'admin.site.urls'),
+   (r'^admin/', admin.site.urls),
    (r'^$','Index'),
    (r'^menber/$','Menber'),
    (r'^signup/$','signup'),
