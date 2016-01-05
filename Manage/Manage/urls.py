@@ -20,6 +20,10 @@ from django.contrib import admin
 urlpatterns = patterns('menber.views',
    (r'^admin/', admin.site.urls),
    (r'^menber/$','Menber'),
+   (r'^signup/$', 'signup'),
+   (r'^login/$','login'),
+   (r'^logout/$','logout'),
+   (r'^setpasswd/$','setpasswd'),
    (r'^search-form/$','search_form'),
    (r'^search/$','search'),
    (r'^$','Index')

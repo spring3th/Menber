@@ -1,6 +1,15 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
+
+class MyUser(models.Model):
+	user = models.OneToOneField(User)
+	nickname = models.CharField(max_length = 16,verbose_name=u"昵称")
+	permission = models.IntegerField()
+
+	def __str__(self):
+		return self.user.username
 
 class  Stores(models.Model):
     store_name = models.CharField(max_length=50,verbose_name=u"店名")
