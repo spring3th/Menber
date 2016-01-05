@@ -19,12 +19,15 @@ class TeacherAdmin(admin.ModelAdmin):
 class StoreAdmin(admin.ModelAdmin):
     list_display = ('store_name','store_brand','store_address','store_boss','store_tel')
 
+class MyUserAdmin(admin.ModelAdmin):
+	list_display = ('username','password','email')
+
 
 
 admin.site.register(Stores,StoreAdmin)
 admin.site.register(Menbers,MenberAdmin)
 admin.site.register(Teacher,TeacherAdmin)
 admin.site.register(Courses,CourseAdmin)
-admin.site.register(MyUser)
+admin.site.register(MyUser,MyUserAdmin)
 
 
