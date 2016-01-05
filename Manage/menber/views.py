@@ -4,7 +4,7 @@ from django import forms
 from menber.models import Menbers,MyUser
 from django.contrib import auth
 from django.shortcuts import render_to_response,render
-from django.contrib auth.models import User
+from django.contrib.auth.models import User
 
 # Create your views here.
 
