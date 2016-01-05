@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class MyUser(models.Model):
 	user = models.OneToOneField(User)
-	nickname = models.CharField(max_length = 16,verbose_name=u"昵称")
+	nickname = models.CharField(max_length = 16)
 	permission = models.IntegerField()
 
 	def __str__(self):
