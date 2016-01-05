@@ -7,9 +7,11 @@ class MyUser(models.Model):
 	user = models.OneToOneField(User)
 	nickname = models.CharField(max_length = 16)
 	permission = models.IntegerField()
-
-	def __str__(self):
-		return self.user.username
+    def __str__(self):
+        return u'%s %s' % (self.user.username,self.nickname)
+    class Meta:
+        verbose_name = "会员名"
+        verbose_name_plural ="会员名"
 
 class  Stores(models.Model):
     store_name = models.CharField(max_length=50,verbose_name=u"店名")
