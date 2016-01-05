@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.conf.urls import *
 from django.contrib import admin
+from django.conf import settings
+
 
 urlpatterns = patterns('menber.views',
    (r'^admin/', admin.site.urls),
@@ -26,5 +28,5 @@ urlpatterns = patterns('menber.views',
    (r'^setpasswd/$','setpasswd'),
    (r'^search-form/$','search_form'),
    (r'^search/$','search'),
-   (r'^$','Index')
+   (r'','Index')
 )
