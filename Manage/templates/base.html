@@ -51,11 +51,16 @@
               </ul>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://v3.bootcss.com/examples/navbar/">默认</a></li>
-            <li><a href="http://v3.bootcss.com/examples/navbar-static-top/">静态导航</a></li>
-            <li class="active"><a href="./Fixed Top Navbar Example for Bootstrap_files/Fixed Top Navbar Example for Bootstrap.htm">自适应<span class="sr-only">(current)</span></a></li>
-          </ul>
+         <ul class="nav navbar-nav navbar-right">
+						{% if user %}
+							<li><p class="navbar-text">欢迎你&nbsp;&nbsp;<span id="base_name">{{ user.nickname }}</span></p></li>
+							<li><a href="/logout/">注销</a></li>
+							<li><a href="/setpasswd/">修改密码</a></li>
+						{% else %}
+							<li><a href="/signup/">注册</a></li>
+							<li><a href="/login/">登录</a></li>
+						{% endif %}
+         </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
