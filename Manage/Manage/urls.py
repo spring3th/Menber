@@ -20,8 +20,8 @@ from django.conf import settings
 
 
 urlpatterns = patterns('menber.views',
-   (r'^$','Index'),
    (r'^admin/', admin.site.urls),
+   (r'^$','Index'),
    (r'^menber/$','Menber'),
    (r'^signup/$','signup'),
    (r'^login/$','login'),
