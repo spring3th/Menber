@@ -16,7 +16,6 @@ Including another URLconf
 """
 from django.conf.urls import *
 from django.contrib import admin
-from django.conf import settings
 
 
 urlpatterns = patterns('menber.views',
