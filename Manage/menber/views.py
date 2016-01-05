@@ -75,3 +75,25 @@ def login(req):
             status = 'not_exist_or_passwd_err'
     content = {'active_menu':'homepage','status':status,'user':''}
     return render_to_response('login.html',content,context_instance=RequestContext(req))
+
+def setpasswd(req):
+    username = req.session.get('username','')
+    if username != '':
+        user = MyUser.objects.get(username=username)
+    else:
+        return HttpResponseRedirect('/login/')
+    status = ''
+    if req.POST:
+        post = req.POST
+        if user.user.check_password(post.get('old','')):
+            if post.get('new','') == post.get('new_re',''):
+                user.user.set_password(post.get('new',''))
+                user.user.save()
+                status = 'success'
+            else:
+                status = 're_err'
+        else:
+            status = 'passwd_err'
+    content = {'user':user,'active_menu':'homepage','status':status}
+    return render_to_response('setpasswd.html',content,context_instance=RequestContext(req))
+            
