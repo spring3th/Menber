@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 
 class MyUser(models.Model):
     user = models.OneToOneField(User)
-    nickname = models.CharField(max_length = 16)
-    permission = models.IntegerField()
+    nickname = models.CharField(max_length = 16,verbose_name=u"昵称")
+    permission = models.IntegerField(verbose_name=u"权限")
     def __str__(self):
-        return u'%s %s' % (self.user.username,self.user.password)
+        return u'%s %s %s' % (self.user.username,self.user.password,self.nickname)
     class Meta:
         verbose_name = "会员名"
         verbose_name_plural ="会员名"

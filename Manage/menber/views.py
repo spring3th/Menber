@@ -64,7 +64,7 @@ def login(req):
         post = req.POST
         username = post.get('username','')
         passwd = post.get('passwd','')
-        user = auth.authenticate(username=username,passwd=passwd)
+        user = auth.authenticate(username=username,password=passwd)
         if user is not None:
             if user.is_active:
                 req.session['username'] = username
