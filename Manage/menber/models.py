@@ -8,7 +8,7 @@ class MyUser(models.Model):
 	nickname = models.CharField(max_length = 16)
 	permission = models.IntegerField()
     def __str__(self):
-        return u'%s %s' % (self.user.username,self.nickname)
+        return self.user.username
     class Meta:
         verbose_name = "会员名"
         verbose_name_plural ="会员名"
