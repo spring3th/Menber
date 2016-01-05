@@ -22,5 +22,5 @@ urlpatterns = patterns('menber.views',
    (r'^menber/$','Menber'),
    (r'^search-form/$','search_form'),
    (r'^search/$','search'),
-   (r'^index/$','Index')
+   (r'^$','Index')
 )
