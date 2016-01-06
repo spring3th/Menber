@@ -1,4 +1,4 @@
-{% load staticfiles %}
+
 <!DOCTYPE html>
 <!-- saved from url=(0048)http://v3.bootcss.com/examples/navbar-fixed-top/ -->
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -44,9 +44,9 @@
               <ul class="dropdown-menu">
                 <li><a href="/menber/">学员</a></li>
                 <li><a href="/store/">店铺</a></li>
-                  {% if user.permission > 1 %}
-							<li id="addbook"><a href="/addmenber/">添加学员</a></li>
-                  {% endif %}
+                {% if user.myuser.permission == 1 %}
+							<li id="addmenber"><a href="/addmenber/">添加学员</a></li>
+               {% endif %}
                 <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
@@ -56,14 +56,14 @@
             </li>
           </ul>
          <ul class="nav navbar-nav navbar-right">
-             {% if user %}
-                 <li><p class="navbar-text">欢迎你&nbsp;&nbsp;<span id="base_name">{{ user.nickname }}</span></p></li>
-                 <li><a href="/logout/">注销</a></li>
-                 <li><a href="/setpasswd/">修改密码</a></li>
-             {% else %}
-                 <li><a href="/signup/">注册</a></li>
-                 <li><a href="/login/">登录</a></li>
-             {% endif %}
+               {% if user %}
+              <li><p class="navbar-text">欢迎你&nbsp;&nbsp;<span id="base_name">{{ user.myuser.nickname }}</span></p></li>
+              <li><a href="/logout/">注销</a></li>
+              <li><a href="/setpasswd/">修改密码</a></li>
+            {% else %}
+              <li><a href="/signup/">注册</a></li>
+              <li><a href="/login/">登录</a></li>
+            {% endif %}
          </ul>
         </div><!--/.nav-collapse -->
       </div>

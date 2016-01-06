@@ -63,18 +63,23 @@ def login(req):
     if req.POST:
         post = req.POST
         username = post.get('username','')
-        passwd = post.get('passwd','')
-        user = auth.authenticate(username=username,password=passwd)
+        password = post.get('passwd','')
+        user = auth.authenticate(username=username,password=password)
+        #myuser = MyUser.objects.filter(user=user)
+        #print(user.myuser.nickname)
         if user is not None:
             if user.is_active:
+                auth.login(req,user)
                 req.session['username'] = username
-                return HttpResponseRedirect('/')
+                #return HttpResponseRedirect('/')
+                return render_to_response('index.html',locals(),context_instance=RequestContext(req))
             else:
                 status = 'not_active'
         else:
             status = 'not_exist_or_passwd_err'
     content = {'active_menu':'homepage','status':status,'user':''}
     return render_to_response('login.html',content,context_instance=RequestContext(req))
+
 
 def setpasswd(req):
     username = req.session.get('username','')
