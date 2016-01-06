@@ -80,11 +80,10 @@ def login(req):
     content = {'active_menu':'homepage','status':status,'user':''}
     return render_to_response('login.html',content,context_instance=RequestContext(req))
 
-
 def setpasswd(req):
     username = req.session.get('username','')
     if username != '':
-        user = MyUser.objects.get(username=username)
+        user = MyUser.objects.get(user__username=username)
     else:
         return HttpResponseRedirect('/login/')
     status = ''
@@ -101,7 +100,4 @@ def setpasswd(req):
             status = 'passwd_err'
     content = {'user':user,'active_menu':'homepage','status':status}
     return render_to_response('setpasswd.html',content,context_instance=RequestContext(req))
-
-
-
             
